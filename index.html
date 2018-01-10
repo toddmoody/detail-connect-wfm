@@ -1,0 +1,53 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detail Connect - Projects</title>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
+    <link href='./css/main.css' rel='stylesheet' type='text/css'>
+  </head>
+  
+  <body>
+    <div id="container">
+      <div id="filters">
+        <h3>Filter projects</h3>
+       
+          <!-- <fieldset class="sliders">
+            <label for="floorArea">Job Floor Area</label>
+            <input type="range" min="1" max="100" value="50" class="slider" id="foorArea"><br>
+            <label for="totalWeight">Job Floor Area</label>
+            <input type="range" min="1" max="100" value="50" class="slider" id="totalWeight"><br>
+          </fieldset> -->
+       
+          <fieldset class="checkboxes">
+            <label for="steelDetailing">Steel Detailing</label>
+            <input type="checkbox" id="steelDetailing" onchange="updateView(this);"/>
+            <label for="structuralDrafting">Structual Drafting</label>
+            <input type="checkbox" id="structuralDrafting" onchange="updateView(this);"/>
+            <label for="precastDetailing">Precast Detailing</label>
+            <input type="checkbox" id="precastDetailing" onchange="updateView(this);"/>
+            <label for="consulting">Consulting</label>
+            <input type="checkbox" id="consulting" onchange="updateView(this);"/>
+          </fieldset>
+          
+          <div>
+            <button id="reset">Reset filters</button>
+          </div>
+      </div>
+      <div id="map-canvas"></div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.2.1.min.js"><\/script>')</script>
+    
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI7tH7hPwGo-2UqhQZwVv923-AcmPQGCg"></script>
+    <script src="js/data-list.js"></script>
+
+    <script src="js/main.js"></script>
+   
+
+  </body>
+</html>
