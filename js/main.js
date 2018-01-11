@@ -127,7 +127,7 @@ const updateView = (element) => {
 
 // functioon to handle filter reset
 const resetBtn = () => {
-    document.getElementById("reset").addEventListener("click", function(){
+    document.getElementById("reset-btn").addEventListener("click", function(){
         location.reload();
     });
 }

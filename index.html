@@ -5,35 +5,43 @@
     <title>Detail Connect - Projects</title>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href='./css/main.css' rel='stylesheet' type='text/css'>
   </head>
   
   <body>
     <div id="container">
       <div id="filters">
-        <h3>Filter projects</h3>
+          <p><small>Filter projects by (all displayed by default):</small></p>
        
           <!-- <fieldset class="sliders">
             <label for="floorArea">Job Floor Area</label>
             <input type="range" min="1" max="100" value="50" class="slider" id="foorArea"><br>
             <label for="totalWeight">Job Floor Area</label>
-            <input type="range" min="1" max="100" value="50" class="slider" id="totalWeight"><br>
-          </fieldset> -->
-       
-          <fieldset class="checkboxes">
-            <label for="steelDetailing">Steel Detailing</label>
-            <input type="checkbox" id="steelDetailing" onchange="updateView(this);"/>
-            <label for="structuralDrafting">Structual Drafting</label>
-            <input type="checkbox" id="structuralDrafting" onchange="updateView(this);"/>
-            <label for="precastDetailing">Precast Detailing</label>
-            <input type="checkbox" id="precastDetailing" onchange="updateView(this);"/>
-            <label for="consulting">Consulting</label>
-            <input type="checkbox" id="consulting" onchange="updateView(this);"/>
-          </fieldset>
+            <input type="range" min="1" max="100" value="50" class="slider" id="totalWeight"><br> -->
+
+            <p>Steel Detailing:</p><input type="checkbox" id="steelDetailing" onchange="updateView(this);"/><label for="steelDetailing"></label>
+            <p>Structural Drafting:</p><input type="checkbox" id="structuralDrafting" onchange="updateView(this);" /><label for="structuralDrafting"></label>
+            <p>Precast Detailing:</p><input type="checkbox" id="precastDetailing" onchange="updateView(this);" /><label for="precastDetailing"></label>
+            <p>Consulting:</p><input type="checkbox" id="consulting" onchange="updateView(this);" /><label for="consulting"></label>
+
+          <!-- </fieldset>
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="steelDetailing" onchange="updateView(this);">
+              <label class="onoffswitch-label" for="steelDetailing"></label>
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="structuralDrafting" onchange="updateView(this);">
+              <label class="onoffswitch-label" for="structuralDrafting"></label>
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="precastDetailing" onchange="updateView(this);">
+              <label class="onoffswitch-label" for="precastDetailing"></label>
+              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="consulting" onchange="updateView(this);">
+              <label class="onoffswitch-label" for="consulting"></label>
+        </fieldset> -->
+            
+        <paper-toggle-button></paper-toggle-button>
+      
+    
           
           <div>
-            <button id="reset">Reset filters</button>
+            <button id="reset-btn">Reset filters</button>
           </div>
       </div>
       <div id="map-canvas"></div>
