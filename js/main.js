@@ -4,7 +4,6 @@ const infowindow = new google.maps.InfoWindow({
     content: ''
 });
 
-
 // Generate markers based on dataList.js
 // Separated in order to assist migration to externally hosted dataList
 const markerCount = dataList.length
@@ -31,19 +30,19 @@ const categoryPush = () => {
         
         if(dataList[i].consulting === "Yes"){
         //    dataList[i].category = ["consuilting"];
-        dataList[i].category.push("consulting");
+        dataList[i].category.push("Consulting");
         }
 
         if(dataList[i].steel_detailing === "Yes"){
-            dataList[i].category.push("steelDetailing");
+            dataList[i].category.push("Steel Detailing");
         }
 
         if(dataList[i].structural_drafting === "Yes"){
-            dataList[i].category.push("structuralDrafting");
+            dataList[i].category.push("Structural Drafting");
         }
 
         if(dataList[i].precast_detailing === "Yes"){
-            dataList[i].category.push("precastDetailing");
+            dataList[i].category.push("Precast Detailing");
         }
     }
 };
@@ -60,20 +59,23 @@ const addMarker = (marker) => {
         const pos = new google.maps.LatLng(coords[0], coords[1]);
         
         const precastTooltip = 
-        '<h3>' + marker.name + '</h3>' + 
-        '<img class="marker-thumb" src=' + marker.image + '>' +
-        '<p><strong>Panel Quantity:</strong> ' + marker.panel_quantity + '</p>' + 
-        '<p><strong>Total Weight:</strong> ' + marker.total_weight + '</p>' + 
-        '<p><strong>Job Floor Area:</strong> ' + marker.job_floor_area + '</p>' +
-        '<p><strong>Services:</strong> ' + marker.category + '</p>';
+        '<h3 class="info-title">' + marker.name + '</h3>' + 
+        '<p class="info-sub">Panel Quantity: ' + marker.panel_quantity + '</p>' + 
+        '<p class="info-sub">Total Weight: ' + marker.total_weight + ' (T)</p>' + 
+        '<p class="info-sub">Job Floor Area: ' + marker.job_floor_area + ' (&#x33a1)</p>' +
+        '<p class="info-sub">Services: ' + marker.category.toString().split(",").join(", ") + '</p>' + 
+        '<img id="info-img" src=' + marker.image + '>';
+
+        raw=1
 
         const nonPrecastTooltip = 
-        '<h3>' + marker.name + '</h3>' + 
-        '<img class="marker-thumb" src=' + marker.image + '>' +
-        '<p><strong>Total Weight:</strong> ' + marker.total_weight + '</p>' + 
-        '<p><strong>Job Floor Area:</strong> ' + marker.job_floor_area + '</p>' +
-        '<p><strong>Services:</strong> ' + marker.category + '</p>';
+        '<h3 class="info-title">' + marker.name + '</h3>' + 
+        '<p class="info-sub">Total Weight: ' + marker.total_weight + ' (T)</p>' +  
+        '<p class="info-sub">Job Floor Area: ' + marker.job_floor_area + ' (&#x33a1)</p>' +
+        '<p class="info-sub">Services: ' + marker.category.toString().split(",").join(", ") + '</p>' + 
+        '<img id="info-img" src=' + marker.image.split("dl=0").join("raw=1") + '>';
 
+        // const markerImg = (marker.image === "string") ? marker.image: no-image;
         const content = (marker.precast_detailing === "Yes") ? precastTooltip: nonPrecastTooltip;
 
         
@@ -84,7 +86,8 @@ const addMarker = (marker) => {
             title: title,
             position: pos,
             category: category,
-            map: map
+            map: map,
+            icon: "./img/blue-fat-marker.png"
         });
 
         gmarkers1.push(marker1);
