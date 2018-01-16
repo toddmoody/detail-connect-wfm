@@ -99,7 +99,10 @@ const addMarker = (marker) => {
                 infowindow.setContent(content);
                 infowindow.open(map, marker1);
                 map.panTo(this.getPosition());
-                map.setZoom(10);
+                map.setZoom(10);    
+                $("#Steel Detailing").change(function(){
+                    console.log("You clicked Steel Detailing!");
+                }); 
             }
         })(marker1, content));
     
@@ -111,9 +114,12 @@ const updateView = (element) => {
         checkedBoxes = ([...document.querySelectorAll('input[type=checkbox]:checked')]).map(function(o) { return o.id; });
         console.log(checkedBoxes);
         for (i = 0; i < markerCount; i++) {
-        		marker = gmarkers1[i];
+                marker = gmarkers1[i];
+                
+                // close any active infowindows when any filter is toggled
+                infowindow.close();
        
-            //Filter to show any markers containing ALL of the selected options
+                //Filter to show any markers containing ALL of the selected options
         		if(checkedBoxes.every(function (o) {
                     return (marker.category).indexOf(o) >= 0;})){
             		marker.setVisible(true);
