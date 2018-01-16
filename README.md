@@ -26,14 +26,10 @@ Flexbox
 JavaScript 
 WorkFlowMax API integration (JSON-P)
 
---- Release Notes ---
+--- Ideas for enhancement ---
+In addition to full automation with the WorkflowMax API I'd like to refine the filtering further to also allow project weight based filtering i.e. display projects > 50 tonnes etc (this could also be expanded to more specific project data such as floor size and panel quantity).
 
--- 11.01.2018 --
+Potentially marker clustering however an important aspect of this map for the client is displaying bredth of projects across the country and I feel this is currently achieved better without using clustering. 
 
-Updated logic for checkbox filtering in order to handle multiple selections / combinations
-Added reset button to clear filters
-Added logic to zoom and center map around selected marker for better usability
+Additional stying to the standard google maps infowindow.
 
--- 15.12.2017 --
-
-Base app deployed, pending updated filtering, styling, and WFM integration (JSON data currently stroed in .js file)
