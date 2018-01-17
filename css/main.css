@@ -1,3 +1,4 @@
+
 /* minimalist css style reset */
 *,
 *::before,
@@ -34,6 +35,11 @@ body {
   margin-bottom: 0.6em;
 }
 
+.info-hr {
+  max-width: 100px;
+  margin-bottom: 0.6em;
+}
+
 .info-sub {
   font-size: 14px;
   margin-bottom: 0.3em;
@@ -41,7 +47,7 @@ body {
 
 /* filtering styles */
 /* Flexbox for filters */
-#filters {
+/* #filters {
   display: flex;
   justify-content: center;
   flex-direction: row;
@@ -53,21 +59,34 @@ body {
   width: 100%;
   min-height: 3.2em;
   background-color: rgb(249, 249,249);
+} */
+
+.header {
+	padding-top: .5em;
+	padding-bottom: .5em;
+	border: 1px solid #a2a2a2;
+	background-color: #f4f4f4;
+	-webkit-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 0px 14px 0px rgba(0,0,0,0.75);
+  text-align: center;
 }
 
-#filters p {
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#filters li {
   font-size: 12px;
   margin-left: 1em;
   margin-right: 0.5em;
 }
 
-small {
+#filters-fine {
   font-style: italic;
 } 
-
-fieldset {
-  border: none;
-}
 
 input[type=checkbox]{
 	height: 0;
@@ -83,7 +102,7 @@ label {
 	background: #dbdbdb;
 	display: block;
 	border-radius: 100px;
-	position: relative;
+  position: relative;
 }
 
 label:after {
@@ -114,16 +133,79 @@ label:active:after {
 /* reset button styles */
 #reset-btn {
   font-family: 'Open Sans', sans-serif;
-  margin-left: 2.8em;
   padding: .75em 1em;
   background: none;
-  border: 1px solid grey;
+  border: 1px solid rgb(175, 175, 175);
+  border-radius: 5px;.
+
 }
 
 #reset-btn:hover {
-  margin-left: 2.8em;
   padding: .75em 1em;
-  background: #64a7f3;
-  color: white;
-  border: 1px solid #64a7f3;
+  background: #e4e3e3;
+  border: 1px solid  rgb(175, 175, 175);
+
+
+}
+
+/* ================================= 
+  Media Queries
+==================================== */
+
+@media (max-width: 769px) {
+  label {
+      margin: 0 auto;
+  }
+  #reset-btn,
+  #reset-btn:hover {
+    margin-left: none;
+    margin-top: 2em;
+    margin-bottom: 1.2em;
+  }
+  #filters-fine {
+    margin-bottom: 20px !important;
+  }
+  input {
+    margin-top: 0 !important;
+  }
+  .header
+  #filters {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  #filters label {
+    margin-bottom: 0.7em;
+  }
+
+}
+
+@media (min-width: 769px) {
+  .header
+  #filters {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+	}
+	.header {
+		flex-direction: column;
+		align-items: center;
+		width: 100%;
+		margin: 0 auto;
+  }
+  #reset-btn,
+  #reset-btn:hover {
+    margin-left: 4.8em;
+    margin-top: none;
+  }
+
+}
+
+@media (min-width: 1025px) {
+  .header {
+		flex-direction: row;
+    justify-content: space-between;
+  }
+
 }

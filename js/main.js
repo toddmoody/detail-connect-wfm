@@ -59,7 +59,8 @@ const addMarker = (marker) => {
         const pos = new google.maps.LatLng(coords[0], coords[1]);
         
         const precastTooltip = 
-        '<h3 class="info-title">' + marker.name + '</h3>' + 
+        '<h3 class="info-title">' + marker.name + '</h3>' +
+        
         '<p class="info-sub">Panel Quantity: ' + marker.panel_quantity + '</p>' + 
         '<p class="info-sub">Total Weight: ' + marker.total_weight + ' (T)</p>' + 
         '<p class="info-sub">Job Floor Area: ' + marker.job_floor_area + ' (&#x33a1)</p>' +
@@ -70,6 +71,7 @@ const addMarker = (marker) => {
 
         const nonPrecastTooltip = 
         '<h3 class="info-title">' + marker.name + '</h3>' + 
+        
         '<p class="info-sub">Total Weight: ' + marker.total_weight + ' (T)</p>' +  
         '<p class="info-sub">Job Floor Area: ' + marker.job_floor_area + ' (&#x33a1)</p>' +
         '<p class="info-sub">Services: ' + marker.category.toString().split(",").join(", ") + '</p>' + 
@@ -100,9 +102,6 @@ const addMarker = (marker) => {
                 infowindow.open(map, marker1);
                 map.panTo(this.getPosition());
                 map.setZoom(10);    
-                $("#Steel Detailing").change(function(){
-                    console.log("You clicked Steel Detailing!");
-                }); 
             }
         })(marker1, content));
     

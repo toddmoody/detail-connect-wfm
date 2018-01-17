@@ -11,39 +11,19 @@
   
   <body>
     <div id="container">
-      <div id="filters">
-          <p><small>Filter projects by (all displayed by default):</small></p>
-       
-          <!-- <fieldset class="sliders">
-            <label for="floorArea">Job Floor Area</label>
-            <input type="range" min="1" max="100" value="50" class="slider" id="foorArea"><br>
-            <label for="totalWeight">Job Floor Area</label>
-            <input type="range" min="1" max="100" value="50" class="slider" id="totalWeight"><br> -->
-
-            <p>Steel Detailing:</p><input type="checkbox" id="Steel Detailing" onchange="updateView(this);"/><label for="Steel Detailing"></label>
-            <p>Structural Drafting:</p><input type="checkbox" id="Structural Drafting" onchange="updateView(this);" /><label for="Structural Drafting"></label>
-            <p>Precast Detailing:</p><input type="checkbox" id="Precast Detailing" onchange="updateView(this);" /><label for="Precast Detailing"></label>
-            <p>Consulting:</p><input type="checkbox" id="Consulting" onchange="updateView(this);" /><label for="Consulting"></label>
-
-          <!-- </fieldset>
-              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="steelDetailing" onchange="updateView(this);">
-              <label class="onoffswitch-label" for="steelDetailing"></label>
-              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="structuralDrafting" onchange="updateView(this);">
-              <label class="onoffswitch-label" for="structuralDrafting"></label>
-              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="precastDetailing" onchange="updateView(this);">
-              <label class="onoffswitch-label" for="precastDetailing"></label>
-              <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="consulting" onchange="updateView(this);">
-              <label class="onoffswitch-label" for="consulting"></label>
-        </fieldset> -->
-            
-        <paper-toggle-button></paper-toggle-button>
-      
-    
-          
+      <header class="header">
+        <!-- To insert header text  -->
+      <ul id="filters">
+          <li id="filters-fine"><small>Filter projects by (all displayed by default):</small></li>
+            <li>Steel Detailing:</li><input type="checkbox" id="Steel Detailing" onchange="updateView(this);"/><label for="Steel Detailing"></label>
+            <li>Structural Drafting:</li><input type="checkbox" id="Structural Drafting" onchange="updateView(this);" /><label for="Structural Drafting"></label>
+            <li>Precast Detailing:</li><input type="checkbox" id="Precast Detailing" onchange="updateView(this);" /><label for="Precast Detailing"></label>
+            <li>Consulting:</li><input type="checkbox" id="Consulting" onchange="updateView(this);" /><label for="Consulting"></label>
           <div>
             <button id="reset-btn">Reset filters</button>
           </div>
-      </div>
+      </ul>
+    </header>
       <div id="map-canvas"></div>
 
     </div>
