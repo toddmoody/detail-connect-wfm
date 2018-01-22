@@ -86,14 +86,6 @@ const addMarker = (marker) => {
         // const markerImg = (marker.image === "string") ? marker.image: no-image;
         const content = (marker.precast_detailing === "Yes") ? precastTooltip: nonPrecastTooltip;
 
-        
-        // marker.name + marker.job_floor_area;
-        // maybe need to use a functoon here in order to display the relevant marker content and then invoke it below for setContent
-
-        // const toggleAnn = () => {
-        //     marker.setAnimation(google.maps.Animation.DROP);
-        // }
-
         marker1 = new google.maps.Marker({
             title: title,
             position: pos,
@@ -111,8 +103,8 @@ const addMarker = (marker) => {
                 console.log('Gmarker 1 gets pushed');
                 infowindow.setContent(content);
                 infowindow.open(map, marker1);
-                map.panTo(this.getPosition());
-                map.setZoom(10);    
+                // map.panTo(this.getPosition());
+                // map.setZoom(10);    
             }
         })(marker1, content));
     
@@ -128,6 +120,7 @@ const updateView = (element) => {
                 
                 // close any active infowindows when any filter is toggled
                 infowindow.close();
+                
        
                 //Filter to show any markers containing ALL of the selected options
         		if(checkedBoxes.every(function (o) {
