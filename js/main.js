@@ -22,11 +22,9 @@ const initMap = () => {
         addMarker(dataList[i]);
     }
 
-    const markerCluster = new MarkerClusterer(map, gmarkers1,
+    markerCluster = new MarkerClusterer(map, gmarkers1,
         {imagePath: 'img/m'});
-        
 }
-
 
 
 // function to push an array of category(s) into the original dataList for filtering purposes 
@@ -55,9 +53,8 @@ const categoryPush = () => {
 
 categoryPush();
 
-
 // Function to add markers to the map
-// Additional logic build in so that dataList can remain unedited (need to use direct WorkflowMax export)
+// Additional logic built in so that dataList can remain unedited (client requirement to use direct WorkflowMax export)
 const addMarker = (marker) => {
         const category = marker.category;
         const title = marker.name;
@@ -103,35 +100,41 @@ const addMarker = (marker) => {
                 console.log('Gmarker 1 gets pushed');
                 infowindow.setContent(content);
                 infowindow.open(map, marker1);
-                // map.panTo(this.getPosition());
-                // map.setZoom(10);    
             }
         })(marker1, content));
     
 }
+
 // function to manage checkbox filtering in relation to job type. Filters are designed to handle multiple criteria.
 const updateView = (element) => {	
-  	if (element) {
+    const newmarkers = [];
+    console.log("change");  
+    if (element) {
         //Get array with names of the checked boxes
-        checkedBoxes = ([...document.querySelectorAll('input[type=checkbox]:checked')]).map(function(o) { return o.id; });
+        checkedBoxes = ([...document.querySelectorAll('input[type=checkbox]:checked')]).map(function(o) {return o.id;});
         console.log(checkedBoxes);
         for (i = 0; i < markerCount; i++) {
+            
                 marker = gmarkers1[i];
-                
+
                 // close any active infowindows when any filter is toggled
                 infowindow.close();
                 
-       
                 //Filter to show any markers containing ALL of the selected options
         		if(checkedBoxes.every(function (o) {
                     return (marker.category).indexOf(o) >= 0;})){
-            		marker.setVisible(true);
+                    marker.setVisible(true);
+                    newmarkers.push(marker);
         		}
                 else {
                     marker.setVisible(false);
+                    // marker.setMap(null);
                 }
+                markerCluster.clearMarkers();
+                markerCluster.addMarkers(newmarkers);
         }
-  	}
+      }
+
   	else {
    		 console.log('No param given');
 		}
