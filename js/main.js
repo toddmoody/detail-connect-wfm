@@ -21,7 +21,13 @@ const initMap = () => {
     for (let i = 0; i < markerCount; i++) {
         addMarker(dataList[i]);
     }
+
+    const markerCluster = new MarkerClusterer(map, gmarkers1,
+        {imagePath: 'img/m'});
+        
 }
+
+
 
 // function to push an array of category(s) into the original dataList for filtering purposes 
 const categoryPush = () => {
@@ -57,24 +63,24 @@ const addMarker = (marker) => {
         const title = marker.name;
         const coords = marker.address.toString().split(",");
         const pos = new google.maps.LatLng(coords[0], coords[1]);
+        // const dropAnn = marker.setAnnimation(google.maps.Animation.DROP);
         
+        
+        //a separate 'precast' constant as they infowindow needs to also display panel quantity when precast has been done as part of the job.  
         const precastTooltip = 
         '<h3 class="info-title">' + marker.name + '</h3>' +
-        
-        '<p class="info-sub">Panel Quantity: ' + marker.panel_quantity + '</p>' + 
-        '<p class="info-sub">Total Weight: ' + marker.total_weight + ' (T)</p>' + 
-        '<p class="info-sub">Job Floor Area: ' + marker.job_floor_area + ' (&#x33a1)</p>' +
-        '<p class="info-sub">Services: ' + marker.category.toString().split(",").join(", ") + '</p>' + 
-        '<img id="info-img" src=' + marker.image + '>';
-
-        raw=1
+        '<p class="info-sub"><img id="dc-logo" src="./img/dc-logo.png"><strong>Panel Quantity:</strong> ' + marker.panel_quantity + '</p>' + 
+        '<p class="info-sub"><img id="dc-logo" src="./img/dc-logo.png"><strong>Total Weight:</strong> ' + marker.total_weight + ' (T)</p>' + 
+        '<p class="info-sub"><img id="dc-logo" src="./img/dc-logo.png"><strong>Job Floor Area:</strong> ' + marker.job_floor_area + ' (&#x33a1)</p>' +
+        '<p class="info-sub"><img id="dc-logo" src="./img/dc-logo.png"><strong>Services:</strong> ' + marker.category.toString().split(",").join(", ") + '</p>' + 
+        // image url provided in the data is taken directly from dropbox. The end of the URL string needs to be updated in order for the image to display externally from dropbox
+        '<img id="info-img" src=' + marker.image.split("dl=0").join("raw=1") + '>';
 
         const nonPrecastTooltip = 
         '<h3 class="info-title">' + marker.name + '</h3>' + 
-        
-        '<p class="info-sub">Total Weight: ' + marker.total_weight + ' (T)</p>' +  
-        '<p class="info-sub">Job Floor Area: ' + marker.job_floor_area + ' (&#x33a1)</p>' +
-        '<p class="info-sub">Services: ' + marker.category.toString().split(",").join(", ") + '</p>' + 
+        '<p class="info-sub"><img id="dc-logo" src="./img/dc-logo.png"><strong>Total Weight:</strong> ' + marker.total_weight + ' (T)</p>' +  
+        '<p class="info-sub"><img id="dc-logo" src="./img/dc-logo.png"><strong>Job Floor Area:</strong> ' + marker.job_floor_area + ' (&#x33a1)</p>' +
+        '<p class="info-sub"><img id="dc-logo" src="./img/dc-logo.png"><strong>Services:</strong> ' + marker.category.toString().split(",").join(", ") + '</p>' + 
         '<img id="info-img" src=' + marker.image.split("dl=0").join("raw=1") + '>';
 
         // const markerImg = (marker.image === "string") ? marker.image: no-image;
@@ -84,12 +90,17 @@ const addMarker = (marker) => {
         // marker.name + marker.job_floor_area;
         // maybe need to use a functoon here in order to display the relevant marker content and then invoke it below for setContent
 
+        // const toggleAnn = () => {
+        //     marker.setAnimation(google.maps.Animation.DROP);
+        // }
+
         marker1 = new google.maps.Marker({
             title: title,
             position: pos,
             category: category,
             map: map,
-            icon: "./img/blue-fat-marker.png"
+            animation: google.maps.Animation.DROP,
+            icon: "./img/blue-fat-marker.png",
         });
 
         gmarkers1.push(marker1);
