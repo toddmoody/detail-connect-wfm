@@ -22,8 +22,13 @@ const initMap = () => {
         addMarker(dataList[i]);
     }
 
+    // var mcOptions = {gridSize: 16, maxZoom: 10};
+
     markerCluster = new MarkerClusterer(map, gmarkers1,
-        {imagePath: 'img/m'});
+        {imagePath: 'img/m',
+        gridSize: 25,
+        maxZoom: 14
+    });
 }
 
 

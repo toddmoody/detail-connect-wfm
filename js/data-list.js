@@ -951,7 +951,7 @@ const dataList = [
   {
     "job_no": 17013,
     "name": "Port Nelson Stage 2",
-    "address": "-41.2633492,173.2745168",
+    "address": "-41.2633492,173.2745268",
     "job_floor_area": 11000,
     "steel_detailing": "Yes",
     "total_weight": 381,
