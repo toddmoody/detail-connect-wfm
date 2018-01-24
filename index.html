@@ -7,6 +7,7 @@
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
     <link href='./css/main.css' rel='stylesheet' type='text/css'>
+    <script src="https://use.fontawesome.com/f42433b33a.js"></script>
   </head>
   
   <body>
@@ -22,14 +23,11 @@
               <li>Precast Detailing:</li><input type="checkbox" id="Precast Detailing" onchange="updateView(this);" /><label for="Precast Detailing"></label>
               <li>Consulting:</li><input type="checkbox" id="Consulting" onchange="updateView(this);" /><label for="Consulting"></label>
             <div>
-              <button id="reset-btn">Reset filters</button>
+              <a href="#" id="reset-btn" class="reset-btn">Clear Filters&nbsp&nbsp<i class="fa fa-refresh" aria-hidden="true"></i></a>
             </div>
         </ul>
         <div id="map-canvas"></div>
       </div>
-
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script>window.jQuery || document.write('<script src="https://code.jquery.com/jquery-3.2.1.min.js"><\/script>')</script>
     <script src="js/markerclusterer.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI7tH7hPwGo-2UqhQZwVv923-AcmPQGCg"></script>
     <script src="js/data-list.js"></script>
