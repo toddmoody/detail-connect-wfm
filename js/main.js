@@ -1,3 +1,4 @@
+
 const gmarkers1 = [];
 const categoryRef = [];
 const infowindow = new google.maps.InfoWindow({
@@ -21,8 +22,6 @@ const initMap = () => {
     for (let i = 0; i < markerCount; i++) {
         addMarker(dataList[i]);
     }
-
-    // var mcOptions = {gridSize: 16, maxZoom: 10};
 
     markerCluster = new MarkerClusterer(map, gmarkers1,
         {imagePath: 'img/m',
@@ -102,18 +101,21 @@ const addMarker = (marker) => {
         // Marker click listener
         google.maps.event.addListener(marker1, 'click', (function (marker1, content) {
             return function () {
-                console.log('Gmarker 1 gets pushed');
                 infowindow.setContent(content);
                 infowindow.open(map, marker1);
             }
         })(marker1, content));
+
+        // Close active infowindow when the user clicks on the underlying map.
+        google.maps.event.addListener(map, "click", function(event) {
+            infowindow.close();
+        });
     
 }
 
 // function to manage checkbox filtering in relation to job type. Filters are designed to handle multiple criteria.
 const updateView = (element) => {	
     const newmarkers = [];
-    console.log("change");  
     if (element) {
         //Get array with names of the checked boxes
         checkedBoxes = ([...document.querySelectorAll('input[type=checkbox]:checked')]).map(function(o) {return o.id;});
