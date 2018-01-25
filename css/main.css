@@ -75,9 +75,7 @@ header {
 }
 
 #container {
-
 	background-color: #f4f4f4;
-  /* text-align: center; */
 }
 
 ul {
@@ -194,8 +192,10 @@ label:active:after {
     margin-top: 1.5em;
     margin-bottom: 2.2em;
   }
+
   #filters-fine {
-    margin-bottom: 20px !important;
+    margin-top: 2em;
+    margin-bottom: 2em !important;
   }
   input {
     margin-top: 0 !important;
