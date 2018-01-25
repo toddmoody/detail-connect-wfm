@@ -51,7 +51,7 @@ header {
 
 /* infowindow styles */
 #info-img {
-  max-height: 170px;
+  height: 190px;
   margin-left: 1em;
   margin-top: 1em;
 }
