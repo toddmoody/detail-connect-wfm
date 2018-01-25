@@ -6,6 +6,10 @@ Detail Connect Projects - Google Maps integration
 
 Detail Connect are a Steel Detailing compnay based in Tauranga, NZ. They required a web application to display their hero projects on a Google Map with advanced filtering (due to the complex nature of their wide variety of projects and service offering). The map will be integrated with the WorkFlowMax API in order to redner relevant projects and remain syncronised.  
 
+--- Staging URL ---
+
+https://toddmoody.github.io/detail-connect-wfm/
+
 --- Key functionality ---
 
 Integration with Google Maps API v3
