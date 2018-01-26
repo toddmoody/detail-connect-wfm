@@ -600,7 +600,7 @@ const dataList = [
   {
     "job_no": 16066,
     "name": "Port Nelson",
-    "address": "-41.2633492,173.2745168",
+    "address": "-41.263171, 173.277822",
     "job_floor_area": 16000,
     "steel_detailing": "Yes",
     "total_weight": 494,
@@ -769,7 +769,7 @@ const dataList = [
   {
     "job_no": 16090,
     "name": "Stokes Valley CC",
-    "address": "-40.5863394,175.0761598",
+    "address": "-41.173634, 174.981694",
     "job_floor_area": 982,
     "steel_detailing": "Yes",
     "total_weight": 54,
@@ -938,7 +938,7 @@ const dataList = [
   {
     "job_no": 17013,
     "name": "Port Nelson Stage 2",
-    "address": "-41.2633492,173.2745168",
+    "address": "-41.264115, 173.277184",
     "job_floor_area": 11000,
     "steel_detailing": "Yes",
     "total_weight": 381,
@@ -1196,6 +1196,19 @@ const dataList = [
     "image": "https://www.dropbox.com/s/iw779adwxz2bpkg/Capture.PNG?dl=0"
   },
   {
+    "job_no": 17057,
+    "name": "Melrose Stage 1",
+    "address": "-37.696011, 176.142899",
+    "job_floor_area": 7300,
+    "steel_detailing": "Yes",
+    "total_weight": 71,
+    "precast_detailing": "No",
+    "panel_quantity": 0,
+    "structural_drafting": "No",
+    "consulting": "No",
+    "image": ""
+  },
+  {
     "job_no": 17061,
     "name": "Phoenix Steel Workshop",
     "address": "-44.3519467,171.2449073",
@@ -1224,7 +1237,7 @@ const dataList = [
   {
     "job_no": 17065,
     "name": "16 Ashley Place",
-    "address": "-37.7147546,176.3146952",
+    "address": "-37.714691,176.316616",
     "job_floor_area": 2500,
     "steel_detailing": "Yes",
     "total_weight": 47.9,
