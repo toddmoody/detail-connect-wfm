@@ -5,16 +5,8 @@ module.exports = {
       path: __dirname
     },
     watch: false,
-    module: {
-        
-        loaders: [
-            {
-                test: /\.css$/,
-                loader: 'style-loader!css-loader'
-            }
-
-        ],
-        
+    
+        module: {
         rules: [
           {
             test: /\.js$/,
@@ -25,8 +17,7 @@ module.exports = {
                 presets: ['@babel/preset-env']
               }
             }
-          }
-        ]
-        
-      }
+          },
+        ],
+        }
   };

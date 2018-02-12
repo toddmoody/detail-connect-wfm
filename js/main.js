@@ -1,4 +1,3 @@
-// require('./css/main.css');
 const dataList = [
     {
       "job_no": 12024,
@@ -1423,6 +1422,10 @@ const updateView = (element) => {
    		 console.log('No param given');
 		}
 }
+
+document.querySelector('#filters').addEventListener("click", function(){
+  updateView(this);
+});
 
 // functioon to handle filter reset
 const resetBtn = () => {

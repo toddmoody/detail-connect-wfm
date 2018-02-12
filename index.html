@@ -6,7 +6,7 @@
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-    <link href='./css/main.css' rel='stylesheet' type='text/css'>
+    <link href="./css/main.min.css" rel="stylesheet" type="text/css">
     <script src="https://use.fontawesome.com/f42433b33a.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDI7tH7hPwGo-2UqhQZwVv923-AcmPQGCg"></script>
   </head>
@@ -14,16 +14,17 @@
       <div id="container">
         <ul id="filters">
             <li id="filters-fine"><small>Filter projects by (all displayed by default):</small></li>
-              <li>Steel Detailing:</li><input type="checkbox" id="Steel Detailing" onchange="updateView(this);"/><label for="Steel Detailing"></label>
-              <li>Structural Drafting:</li><input type="checkbox" id="Structural Drafting" onchange="updateView(this);" /><label for="Structural Drafting"></label>
-              <li>Precast Detailing:</li><input type="checkbox" id="Precast Detailing" onchange="updateView(this);" /><label for="Precast Detailing"></label>
-              <li>Consulting:</li><input type="checkbox" id="Consulting" onchange="updateView(this);" /><label for="Consulting"></label>
+              <li>Steel Detailing:</li><input type="checkbox" id="Steel Detailing"/><label for="Steel Detailing"></label>
+              <li>Structural Drafting:</li><input type="checkbox" id="Structural Drafting"/><label for="Structural Drafting"></label>
+              <li>Precast Detailing:</li><input type="checkbox" id="Precast Detailing"/><label for="Precast Detailing"></label>
+              <li>Consulting:</li><input type="checkbox" id="Consulting"/><label for="Consulting"></label>
             <div>
               <a href="#" id="reset-btn" class="reset-btn">Clear Filters&nbsp&nbsp<i class="fa fa-refresh" aria-hidden="true"></i></a>
             </div>
         </ul>
         <div id="map-canvas"></div>
       </div>
+    <!-- Single bundled and minified .js file handled by webpack -->
     <script src="js/build.js"></script>
   </body>
 </html>
