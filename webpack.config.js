@@ -6,6 +6,15 @@ module.exports = {
     },
     watch: false,
     module: {
+        
+        loaders: [
+            {
+                test: /\.css$/,
+                loader: 'style-loader!css-loader'
+            }
+
+        ],
+        
         rules: [
           {
             test: /\.js$/,
@@ -18,5 +27,6 @@ module.exports = {
             }
           }
         ]
+        
       }
   };
